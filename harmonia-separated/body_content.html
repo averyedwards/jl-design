@@ -1,0 +1,941 @@
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo" onclick="showPage('home')">
+            <img data-harmonia-logo alt="Harmonia Logo">
+            <span class="sr-only">Harmonia</span>
+        </div>
+        <div class="nav-right">
+            <ul class="nav-links">
+                <li><a onclick="showPage('home')" id="nav-home" class="active">Home</a></li>
+                <li><a onclick="showPage('why-harmonia')" id="nav-why-harmonia">Why Harmonia</a></li>
+                <li><a onclick="showPage('partnerships')" id="nav-partnerships">Ignite Your Platform</a></li>
+                <li><a onclick="showPage('team')" id="nav-team">Team</a></li>
+                <li><a onclick="showPage('local-network')" id="nav-local-network">Local Network</a></li>
+                <li><a onclick="showPage('p2p')" id="nav-p2p">Craft Your Harmony</a></li>
+                <li><a onclick="showPage('contact')" id="nav-contact">Contact</a></li>
+            </ul>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
+                <div class="theme-toggle-icons">
+                    <svg class="sun-icon" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"/>
+                    </svg>
+                    <svg class="moon-icon" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/>
+                    </svg>
+                </div>
+            </button>
+        </div>
+    </nav>
+
+    <!-- HOME PAGE -->
+    <div class="page active" id="page-home">
+        <!-- HOME PAGE -->
+            <section class="hero">
+                <div class="hero-content">
+                    <h1 class="tagline">
+                        They designed <span class="addiction">addiction.</span><br>We designed <span class="compatibility">compatibility.</span>
+                    </h1>
+                    <p class="subtitle">Harmonia is the next evolution in compatibility engines for dating platforms. It combines visual attraction, psychological compatibility, and genetic chemistry to prioritize real human connection over endless swiping.</p>
+                    <div class="btn-group">
+                        <button class="btn btn-primary" onclick="showPage('p2p')">Join the Testing Pool</button>
+                        <button class="btn btn-secondary" onclick="showPage('partnerships')">Integrate the Engine</button>
+                    </div>
+                </div>
+        
+                <div class="radar-wrapper">
+                    <div class="radar-bg-circle large"></div>
+                    <div class="radar-bg-circle medium"></div>
+                    <div class="radar-bg-circle small"></div>
+                    
+                    <div class="radar-container">
+                        <svg class="radar-svg" viewBox="0 0 400 400">
+                            <polygon class="radar-grid" points="200,40 350,120 350,280 200,360 50,280 50,120"/>
+                            <polygon class="radar-grid" points="200,80 310,140 310,260 200,320 90,260 90,140"/>
+                            <polygon class="radar-grid" points="200,120 270,160 270,240 200,280 130,240 130,160"/>
+                            <polygon id="radarA" class="radar-shape-a" points="200,50 340,125 330,275 200,345 60,270 70,130"/>
+                            <polygon id="radarB" class="radar-shape-b" points="200,70 320,140 325,265 200,330 80,260 75,135"/>
+                        </svg>
+                        
+                        <span class="radar-label top">VISUAL</span>
+                        <span class="radar-label bottom-left">GENETIC</span>
+                        <span class="radar-label bottom-right">PERSONALITY</span>
+                        
+                        <div class="radar-status" id="radar-status">SYNTHESIZING...</div>
+                    </div>
+                </div>
+            </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-inner">
+                <span class="logo-text">Harmonia Engine</span>
+                <div class="footer-links">
+                    <a onclick="showPage('why-harmonia')">Why Harmonia</a>
+                    <a onclick="showPage('partnerships')">Ignite Your Platform</a>
+                    <a onclick="showPage('team')">Team</a>
+                    <a onclick="showPage('contact')">Contact</a>
+                </div>
+                <p class="copyright">© 2026 Harmonia Engine</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- WHY HARMONIA PAGE -->
+    <div class="page" id="page-why-harmonia">
+        <section id="why-harmonia">
+                <div class="container">
+                    
+                    <div class="why-header-group">
+                        <h2 class="section-title fade-in">Dating is broken. <span style="color: var(--gold);">And it's not an accident.</span></h2>
+                        
+                        <div class="stats-grid">
+                            <div class="stat-card fade-in delay-1">
+                                <div class="stat-number">78%</div>
+                                <div class="stat-label">
+                                    of users report<br>dating app burnout
+                                    <a href="https://www.forbes.com/health/dating/dating-app-fatigue/" target="_blank" class="stat-citation">Source: Forbes (2024)</a>
+                                </div>
+                            </div>
+                            <div class="stat-card fade-in delay-2">
+                                <div class="stat-number">3 hrs</div>
+                                <div class="stat-label">
+                                    daily for heavy users
+                                    <a href="https://www.forbes.com/health/dating/dating-app-fatigue/" target="_blank" class="stat-citation">Source: Forbes (2024)</a>
+                                </div>
+                            </div>
+                            <div class="stat-card fade-in delay-3">
+                                <div class="stat-number">$6B+</div>
+                                <div class="stat-label">
+                                    annual revenue<br>despite falling success
+                                    <a href="https://www.businessofapps.com/data/dating-app-market/" target="_blank" class="stat-citation">Source: Business of Apps</a>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="philosophy-block fade-in delay-2">
+                            <p class="lead-text">
+                                Attraction isn't random. It's a synthesis: the spark you feel when you see someone, the resonance when your minds align, and a chemistry rooted in your biology. Harmonia is the engine that brings all three together.
+                            </p>
+                        </div>
+                    </div>
+        
+                    <div class="science-slider-wrapper fade-in delay-3">
+                        <div class="science-slider-container" id="scienceSlider">
+                            <div class="slider-track" id="scienceTrack">
+                                
+                                <div class="science-card visual-card" data-index="0">
+                                    <!-- Animated Eye Container -->
+                                    <div class="eye-container">
+                                        <svg viewBox="0 0 100 100" class="visual-eye-icon">
+                                            <!-- Outer circle - always visible -->
+                                            <circle class="eye-outer" cx="50" cy="50" r="45" stroke="var(--gold)" stroke-width="1" fill="none"/>
+                                            <!-- Upper eyelid - closed position (curves down to form top of closed eye) -->
+                                            <path class="upper-lid" d="M30 50 Q50 35 70 50" stroke="var(--gold)" stroke-width="1.5" fill="none"/>
+                                            <!-- Pupil/vertical line - hidden initially -->
+                                            <path class="eye-pupil" d="M50 40 L50 60" stroke="var(--maroon)" stroke-width="1.5" fill="none"/>
+                                            <!-- Lower eyelid - closed position (curves up to form bottom of closed eye) -->
+                                            <path class="lower-lid" d="M35 50 Q50 65 65 50" stroke="var(--gold)" stroke-width="1.5" fill="none"/>
+                                            <!-- Diamond shape - hidden initially -->
+                                            <rect class="eye-diamond" x="25" y="25" width="50" height="50" stroke="var(--gold)" stroke-width="0.5" fill="none" style="transform: rotate(45deg); transform-origin: center;"/>
+                                        </svg>
+                                    </div>
+
+                                    <div class="card-header">
+                                        <div class="card-visual">
+                                            <!-- Placeholder to maintain layout spacing -->
+                                        </div>
+                                        <div class="card-title-group">
+                                            <h3 class="card-title">Visual</h3>
+                                            <p class="card-subtitle">Physical attraction drives the strongest initial spark in romantic connection.</p>
+                                        </div>
+                                    </div>
+                                    <div class="card-content">
+                                        <div class="comparison-column">
+                                            <span class="comp-label">Science</span>
+                                            <span class="comp-text">Physical attraction drives the strongest initial spark.</span>
+                                        </div>
+                                        <div class="comparison-column dim">
+                                            <span class="comp-label">Apps</span>
+                                            <span class="comp-text">Reduced it to quick swipes.</span>
+                                        </div>
+                                        <div class="comparison-column highlight">
+                                            <span class="comp-label">Harmonia</span>
+                                            <span class="comp-text">Prioritizes it as the foundation.</span>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <div class="science-card personality-card" data-index="1">
+                                    <!-- Animated Personality Icon Container -->
+                                    <div class="personality-icon-container">
+                                        <svg viewBox="0 0 100 100" class="personality-animated-icon">
+                                            <defs>
+                                                <mask id="arc-mask">
+                                                    <path class="mask-path" d="M 78 27 A 36 36 0 0 1 50 85" stroke="white" stroke-width="4" fill="none" />
+                                                    <path class="mask-path" d="M 50 85 A 36 36 0 0 1 22 27" stroke="white" stroke-width="4" fill="none" />
+                                                    <path class="mask-path" d="M 22 27 A 36 36 0 0 1 78 27" stroke="white" stroke-width="4" fill="none" />
+                                                </mask>
+                                            </defs>
+                                            
+                                            <!-- Three maroon dots -->
+                                            <circle class="dot dot-1" cx="22" cy="27" r="5" fill="var(--maroon)"/>
+                                            <circle class="dot dot-2" cx="78" cy="27" r="5" fill="var(--maroon)"/>
+                                            <circle class="dot dot-3" cx="50" cy="85" r="5" fill="var(--maroon)"/>
+                                            
+                                            <!-- Inner lines (dots to center) -->
+                                            <line class="inner-line line-1" x1="22" y1="27" x2="50" y2="50" stroke="var(--gold)" stroke-width="1.5"/>
+                                            <line class="inner-line line-2" x1="78" y1="27" x2="50" y2="50" stroke="var(--gold)" stroke-width="1.5"/>
+                                            <line class="inner-line line-3" x1="50" y1="85" x2="50" y2="50" stroke="var(--gold)" stroke-width="1.5"/>
+                                            
+                                            <!-- Golden center circle -->
+                                            <circle class="center-circle" cx="50" cy="50" r="6" fill="var(--gold)"/>
+
+                                            <!-- Outer arcs (dot to dot) revealed by mask -->
+                                            <g mask="url(#arc-mask)">
+                                                <path d="M 78 27 A 36 36 0 0 1 50 85" stroke="var(--gold)" stroke-width="1.5" fill="none" stroke-dasharray="4 3" />
+                                                <path d="M 50 85 A 36 36 0 0 1 22 27" stroke="var(--gold)" stroke-width="1.5" fill="none" stroke-dasharray="4 3" />
+                                                <path d="M 22 27 A 36 36 0 0 1 78 27" stroke="var(--gold)" stroke-width="1.5" fill="none" stroke-dasharray="4 3" />
+                                            </g>
+                                        </svg>
+                                    </div>
+
+                                    <div class="card-header">
+                                        <div class="card-visual personality-icon">
+                                            <svg viewBox="0 0 100 100" class="abstract-icon">
+                                                <!-- Final static icon (shown after animation completes) -->
+                                                <circle cx="50" cy="50" r="36" stroke="var(--gold)" stroke-width="1" fill="none" stroke-dasharray="4 3"/>
+                                                <circle cx="22" cy="27" r="5" fill="var(--maroon)"/>
+                                                <circle cx="78" cy="27" r="5" fill="var(--maroon)"/>
+                                                <circle cx="50" cy="85" r="5" fill="var(--maroon)"/>
+                                                <line x1="22" y1="27" x2="50" y2="50" stroke="var(--gold)" stroke-width="1.5"/>
+                                                <line x1="78" y1="27" x2="50" y2="50" stroke="var(--gold)" stroke-width="1.5"/>
+                                                <line x1="50" y1="85" x2="50" y2="50" stroke="var(--gold)" stroke-width="1.5"/>
+                                                <circle cx="50" cy="50" r="6" fill="var(--gold)"/>
+                                            </svg>
+                                        </div>
+                                        <div class="card-title-group">
+                                            <h3 class="card-title">Personality</h3>
+                                            <p class="card-subtitle">Perceived similarity builds deeper, lasting emotional connection.</p>
+                                        </div>
+                                    </div>
+                                    <div class="card-content">
+                                        <div class="comparison-column personality-box science-box">
+                                            <span class="comp-label">Science</span>
+                                            <span class="comp-text">Perceived similarity builds deeper connection.</span>
+                                        </div>
+                                        <div class="comparison-column personality-box apps-box dim">
+                                            <span class="comp-label">Apps</span>
+                                            <span class="comp-text">Largely ignored it.</span>
+                                        </div>
+                                        <div class="comparison-column personality-box harmonia-box highlight">
+                                            <span class="comp-label">Harmonia</span>
+                                            <span class="comp-text">Integrates psychological compatibility into matching.</span>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <div class="science-card genetic-card" data-index="2">
+                                    <!-- Animated DNA Icon Container -->
+                                    <div class="dna-icon-container">
+                                        <svg viewBox="0 0 100 100" class="dna-animated-icon">
+                                            <!-- Helix curves (start hidden) -->
+                                            <path class="helix-gold" d="M35 10 Q65 25 35 40 Q65 55 35 70 Q65 85 35 100" stroke="var(--gold)" stroke-width="2" fill="none"/>
+                                            <path class="helix-maroon" d="M65 10 Q35 25 65 40 Q35 55 65 70 Q35 85 65 100" stroke="var(--maroon)" stroke-width="2" fill="none" opacity="0.6"/>
+                                            <!-- Rungs -->
+                                            <line class="dna-rung rung-1" x1="35" y1="25" x2="65" y2="25" stroke="var(--gold)" stroke-width="1.5"/>
+                                            <line class="dna-rung rung-2" x1="35" y1="55" x2="65" y2="55" stroke="var(--gold)" stroke-width="1.5"/>
+                                            <line class="dna-rung rung-3" x1="35" y1="85" x2="65" y2="85" stroke="var(--gold)" stroke-width="1.5"/>
+                                        </svg>
+                                        <!-- Electric crackle overlay -->
+                                        <svg class="crackle-overlay" viewBox="0 0 100 100">
+                                            <path class="crackle-bolt bolt-1" d="M35 25 L42 22 L48 28 L55 24 L62 26 L65 25" stroke="#ffeb3b" stroke-width="1.5" fill="none"/>
+                                            <path class="crackle-bolt bolt-2" d="M35 55 L43 52 L50 58 L57 54 L65 55" stroke="#ffeb3b" stroke-width="1.5" fill="none"/>
+                                            <path class="crackle-bolt bolt-3" d="M35 85 L41 82 L47 88 L54 84 L60 86 L65 85" stroke="#ffeb3b" stroke-width="1.5" fill="none"/>
+                                        </svg>
+                                        <!-- Amber particles -->
+                                        <div class="amber-particles">
+                                            <div class="amber-particle p1"></div>
+                                            <div class="amber-particle p2"></div>
+                                            <div class="amber-particle p3"></div>
+                                            <div class="amber-particle p4"></div>
+                                            <div class="amber-particle p5"></div>
+                                        </div>
+                                        <!-- Energy wave -->
+                                        <div class="energy-wave"></div>
+                                    </div>
+
+                                    <div class="card-header">
+                                        <div class="card-visual genetic-icon">
+                                            <svg viewBox="0 0 100 100" class="abstract-icon">
+                                                <path d="M35 10 Q65 25 35 40 Q65 55 35 70 Q65 85 35 100" stroke="var(--gold)" stroke-width="2" fill="none"/>
+                                                <path d="M65 10 Q35 25 65 40 Q35 55 65 70 Q35 85 65 100" stroke="var(--maroon)" stroke-width="2" fill="none" opacity="0.6"/>
+                                                <line x1="35" y1="25" x2="65" y2="25" stroke="var(--gold)" stroke-width="1" opacity="0.3"/>
+                                                <line x1="35" y1="55" x2="65" y2="55" stroke="var(--gold)" stroke-width="1" opacity="0.3"/>
+                                                <line x1="35" y1="85" x2="65" y2="85" stroke="var(--gold)" stroke-width="1" opacity="0.3"/>
+                                            </svg>
+                                        </div>
+                                        <div class="card-title-group">
+                                            <h3 class="card-title">Genetic</h3>
+                                            <p class="card-subtitle">Genetic complementarity influences biological attraction signals.</p>
+                                        </div>
+                                    </div>
+                                    <div class="card-content">
+                                        <div class="comparison-column genetic-box science-box">
+                                            <span class="comp-label">Science</span>
+                                            <span class="comp-text">Genetic complementarity influences biological attraction.</span>
+                                        </div>
+                                        <div class="comparison-column genetic-box apps-box dim">
+                                            <span class="comp-label">Apps</span>
+                                            <span class="comp-text">Never incorporated it.</span>
+                                        </div>
+                                        <div class="comparison-column genetic-box harmonia-box highlight">
+                                            <span class="comp-label">Harmonia</span>
+                                            <span class="comp-text">Reveals hidden genetic chemistry signals.</span>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <div class="science-card synthesis-card" data-index="3">
+                                    <!-- Animation Container -->
+                                    <div class="synthesis-animation-container">
+                                        <!-- Three icons in triangle -->
+                                        <div class="synthesis-icon icon-visual">
+                                            <svg viewBox="0 0 100 100">
+                                                <ellipse cx="50" cy="50" rx="35" ry="20" fill="none" stroke="var(--gold)" stroke-width="2"/>
+                                                <circle cx="50" cy="50" r="12" fill="none" stroke="var(--gold)" stroke-width="2"/>
+                                                <circle cx="50" cy="50" r="5" fill="var(--gold)"/>
+                                            </svg>
+                                        </div>
+                                        <div class="synthesis-icon icon-personality">
+                                            <svg viewBox="0 0 100 100">
+                                                <circle cx="50" cy="20" r="8" fill="none" stroke="var(--gold)" stroke-width="2"/>
+                                                <circle cx="25" cy="70" r="8" fill="none" stroke="var(--gold)" stroke-width="2"/>
+                                                <circle cx="75" cy="70" r="8" fill="none" stroke="var(--gold)" stroke-width="2"/>
+                                                <line x1="50" y1="28" x2="25" y2="62" stroke="var(--gold)" stroke-width="1.5"/>
+                                                <line x1="50" y1="28" x2="75" y2="62" stroke="var(--gold)" stroke-width="1.5"/>
+                                                <line x1="33" y1="70" x2="67" y2="70" stroke="var(--gold)" stroke-width="1.5"/>
+                                            </svg>
+                                        </div>
+                                        <div class="synthesis-icon icon-genetics">
+                                            <svg viewBox="0 0 100 100">
+                                                <path d="M35 10 Q65 25 35 40 Q65 55 35 70 Q65 85 35 100" stroke="var(--gold)" stroke-width="2" fill="none"/>
+                                                <path d="M65 10 Q35 25 65 40 Q35 55 65 70 Q35 85 65 100" stroke="var(--maroon)" stroke-width="2" fill="none" opacity="0.6"/>
+                                                <line x1="35" y1="25" x2="65" y2="25" stroke="var(--gold)" stroke-width="1.5" opacity="0.5"/>
+                                                <line x1="35" y1="55" x2="65" y2="55" stroke="var(--gold)" stroke-width="1.5" opacity="0.5"/>
+                                                <line x1="35" y1="85" x2="65" y2="85" stroke="var(--gold)" stroke-width="1.5" opacity="0.5"/>
+                                            </svg>
+                                        </div>
+                                        
+                                        <!-- Impact flash -->
+                                        <div class="impact-flash"></div>
+                                        
+                                        <!-- Sparks (9 total, color-coded) -->
+                                        <div class="sparks-container">
+                                            <div class="spark spark-gold s1"></div>
+                                            <div class="spark spark-white s2"></div>
+                                            <div class="spark spark-gold s3"></div>
+                                            <div class="spark spark-maroon s4"></div>
+                                            <div class="spark spark-gold s5"></div>
+                                            <div class="spark spark-maroon s6"></div>
+                                            <div class="spark spark-white s7"></div>
+                                            <div class="spark spark-gold s8"></div>
+                                            <div class="spark spark-maroon s9"></div>
+                                        </div>
+                                        
+                                        <!-- Fog/Glow -->
+                                        <div class="synthesis-fog"></div>
+                                        
+                                        <!-- Harmonia Logo (center, animated, becomes clickable pause button) -->
+                                        <div class="harmonia-logo-center" onclick="spinLogo(this); toggleAllAnimations();">
+                                            <img data-harmonia-logo alt="Harmonia" class="abstract-icon harmonia-mini-icon">
+                                        </div>
+                                        
+                                        <!-- Pause text (appears below logo after animation) -->
+                                        <div class="pause-animations-text" onclick="toggleAllAnimations()">
+                                            <span class="pause-text-content">Click Us to Pause Animations</span>
+                                            <span class="resume-text-content">Click Us to Resume Animations</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="card-header">
+                                        <div class="card-visual synthesis-icon-final" onclick="toggleAllAnimations(); this.classList.add('rotating'); setTimeout(() => this.classList.remove('rotating'), 600);">
+                                            <img data-harmonia-logo alt="Harmonia" class="abstract-icon synthesis-logo-styled">
+                                            <span class="synthesis-pause-hint">Click to <span class="pause-btn-text">Pause</span></span>
+                                        </div>
+                                        <div class="card-title-group">
+                                            <h3 class="card-title">Synthesis</h3>
+                                            <p class="card-subtitle">Profile data alone fails to predict real-world romantic attraction.</p>
+                                        </div>
+                                    </div>
+                                    <div class="card-content">
+                                        <div class="comparison-column synthesis-box science-box">
+                                            <span class="comp-label">Science</span>
+                                            <span class="comp-text">Profile data alone fails to predict real-world attraction.</span>
+                                        </div>
+                                        <div class="comparison-column synthesis-box apps-box dim">
+                                            <span class="comp-label">Apps</span>
+                                            <span class="comp-text">Relied heavily on profiles.</span>
+                                        </div>
+                                        <div class="comparison-column synthesis-box harmonia-box highlight">
+                                            <span class="comp-label">Harmonia</span>
+                                            <span class="comp-text">Combines all three dimensions for better outcomes.</span>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                            </div>
+                        </div>
+                        
+                        <div class="slider-pagination">
+                            <button class="pagination-arrow" id="prevBtn" aria-label="Previous slide">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M15 18l-6-6 6-6"/>
+                                </svg>
+                            </button>
+                            <div class="pagination-dots">
+                                <div class="pagination-dot active" data-index="0"></div>
+                                <div class="pagination-dot" data-index="1"></div>
+                                <div class="pagination-dot" data-index="2"></div>
+                                <div class="pagination-dot" data-index="3"></div>
+                            </div>
+                            <button class="pagination-arrow" id="nextBtn" aria-label="Next slide">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M9 18l6-6-6-6"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+        
+                    <div class="note-box fade-in delay-4">
+                        <h4>A Note on Compatibility</h4>
+                        <p>
+                            We do not select or filter for 'better' genes. We reveal natural chemistry, not engineer selection. 
+                            The mind handles this itself; Harmonia simply surfaces the invisible signals to help you 
+                            understand real connections.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-inner">
+                <span class="logo-text">Harmonia Engine</span>
+                <div class="footer-links">
+                    <a onclick="showPage('why-harmonia')">Why Harmonia</a>
+                    <a onclick="showPage('partnerships')">Ignite Your Platform</a>
+                    <a onclick="showPage('team')">Team</a>
+                    <a onclick="showPage('contact')">Contact</a>
+                </div>
+                <p class="copyright">© 2026 Harmonia Engine</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- PARTNERSHIPS PAGE -->
+    <div class="page" id="page-partnerships">
+        <section class="partnerships-section">
+                <!-- Tier Tabs - Mobile/Tablet only -->
+                <div class="partnerships-tier-tabs" id="partnershipsTierTabs">
+                    <button class="tier-tab active" data-tier="default">Overview</button>
+                    <button class="tier-tab" data-tier="pilot">Pilot Program</button>
+                    <button class="tier-tab" data-tier="api">API Integration</button>
+                    <button class="tier-tab" data-tier="core">Core License</button>
+                </div>
+
+                <div class="partnerships-layout">
+                    
+                    <div class="partnerships-content">
+                        <div class="content-wrapper" id="partnershipsContentWrapper">
+                            <h2 class="regal-title" id="partnershipsDynamicTitle">The Matching Layer You're Missing</h2>
+                            <p class="regal-intro" id="partnershipsDynamicIntro">Industry retention rates have stalled at <a href="https://www.businessofapps.com/data/dating-app-benchmarks/" target="_blank" class="stat-link">3.3%</a>. Over <a href="https://www.businessofapps.com/data/dating-app-market/" target="_blank" class="stat-link">half the market's revenue</a> sits with one conglomerate. Harmonia exists for independent platforms ready to compete differently. Shared engine. Individual identity. A dating market where quality determines who wins.</p>
+                            
+                            <div class="feature-boxes" id="partnershipsFeatureBoxes">
+                                <!-- Boxes populated by JS -->
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="regal-form-container">
+                        <form id="partnershipsIntegrationForm" class="regal-form">
+                            <div class="form-row">
+                                <div class="input-group">
+                                    <label for="partnershipCompany">Company</label>
+                                    <input type="text" id="partnershipCompany" name="company" required>
+                                </div>
+                                <div class="input-group">
+                                    <label for="partnershipEmail">Work Email</label>
+                                    <input type="email" id="partnershipEmail" name="email" required>
+                                </div>
+                            </div>
+                            
+                            <div class="input-group">
+                                <label for="partnershipMau">Monthly Active Users</label>
+                                <select id="partnershipMau" name="mau" required>
+                                    <option value="" selected>Select range...</option>
+                                    <option value="<10k">&lt; 10,000</option>
+                                    <option value="10k-100k">10,000 - 100,000</option>
+                                    <option value="100k-1m">100,000 - 1,000,000</option>
+                                    <option value="1m+">1,000,000+</option>
+                                </select>
+                            </div>
+                            
+                            <div class="input-group interest-input-group">
+                                <label for="partnershipInterest">Interest</label>
+                                <select id="partnershipInterest" name="interest" required>
+                                    <option value="default" selected>Select integration type...</option>
+                                    <option value="pilot">Pilot Program</option>
+                                    <option value="api">Full API Integration</option>
+                                    <option value="core">Core Engine License</option>
+                                </select>
+                            </div>
+        
+                            <div class="input-group">
+                                <label for="partnershipInquiry">Inquiry</label>
+                                <textarea id="partnershipInquiry" name="inquiry" rows="2" placeholder="Tell us about your platform..."></textarea>
+                            </div>
+        
+                            <button type="submit" class="btn-regal-submit" id="partnershipsSubmitBtn">
+                                <span class="btn-text">Request Access</span> <span class="arrow">→</span>
+                            </button>
+                            <div id="partnershipsFormMessage" class="form-message"></div>
+                        </form>
+                    </div>
+        
+                    <div class="partnerships-footer">
+                        <div class="trusted-divider">
+                            <span>Trusted By</span>
+                        </div>
+                        <div class="trusted-logos">
+                            <span class="trusted-name sans">Google Cloud</span>
+                            <span class="trusted-separator">·</span>
+                            <span class="trusted-name serif">Genetic Lifespan</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        <!-- Partnerships Modal -->
+        <div class="partnerships-modal-overlay" id="partnershipsModalOverlay">
+            <div class="partnerships-modal-content">
+                <button class="partnerships-modal-close" onclick="closePartnershipsModal()">×</button>
+                <div class="partnerships-modal-icon" id="partnershipsModalIcon"></div>
+                <h3 class="partnerships-modal-title" id="partnershipsModalTitle"></h3>
+                <p class="partnerships-modal-desc" id="partnershipsModalDesc"></p>
+                <ul class="partnerships-modal-list" id="partnershipsModalList"></ul>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-inner">
+                <span class="logo-text">Harmonia Engine</span>
+                <div class="footer-links">
+                    <a onclick="showPage('why-harmonia')">Why Harmonia</a>
+                    <a onclick="showPage('partnerships')">Ignite Your Platform</a>
+                    <a onclick="showPage('team')">Team</a>
+                    <a onclick="showPage('contact')">Contact</a>
+                </div>
+                <p class="copyright">© 2026 Harmonia Engine</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- TEAM PAGE -->
+    <div class="page" id="page-team">
+        <section class="team-section">
+                <div class="team-header">
+                    <h2>Built by People Who Believe in Connection</h2>
+                    <p>Six founders united by a shared frustration with modern dating.</p>
+                </div>
+        
+                <div class="team-slider-wrapper">
+                    <button class="slider-arrow prev" aria-label="Previous">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+                    </button>
+        
+                    <div class="team-slider" id="teamSlider">
+                        <!-- Joles - Armenian Arevakhach (8-arm eternity wheel) - Position: Top Left -->
+                        <div class="team-card">
+                            <svg class="team-avatar-radar" viewBox="0 0 100 100">
+                                <!-- Rotating 8-arm eternity wheel with curved arms -->
+                                <g class="symbol-rotate">
+                                    <!-- Eight curved arms emanating from center -->
+                                    <path d="M50,50 Q52,35 50,12" fill="none" stroke="var(--maroon)" stroke-width="2.5" stroke-linecap="round"/>
+                                    <path d="M50,50 Q62,42 80,22" fill="none" stroke="var(--maroon)" stroke-width="2.5" stroke-linecap="round"/>
+                                    <path d="M50,50 Q65,52 88,50" fill="none" stroke="var(--maroon)" stroke-width="2.5" stroke-linecap="round"/>
+                                    <path d="M50,50 Q62,58 80,78" fill="none" stroke="var(--maroon)" stroke-width="2.5" stroke-linecap="round"/>
+                                    <path d="M50,50 Q52,65 50,88" fill="none" stroke="var(--maroon)" stroke-width="2.5" stroke-linecap="round"/>
+                                    <path d="M50,50 Q38,58 20,78" fill="none" stroke="var(--maroon)" stroke-width="2.5" stroke-linecap="round"/>
+                                    <path d="M50,50 Q35,52 12,50" fill="none" stroke="var(--maroon)" stroke-width="2.5" stroke-linecap="round"/>
+                                    <path d="M50,50 Q38,42 20,22" fill="none" stroke="var(--maroon)" stroke-width="2.5" stroke-linecap="round"/>
+                                </g>
+                                <!-- Pulsing core -->
+                                <circle class="symbol-core" cx="50" cy="50" r="14" 
+                                        fill="rgba(212,168,83,0.25)" stroke="var(--gold)" stroke-width="2"/>
+                            </svg>
+                            <h3>Joles</h3>
+                            <span class="role">Marketing & Brand</span>
+                            <p class="bio">The initial spark: in September 2024, questioned why genetics had been overlooked in dating services. Experienced in scaling large media accounts, logo design, and a wide array of ventures. First investor and secured key early partnerships through an extensive network. Designed the brand aesthetics and visual identity. Drives marketing strategy and outreach.</p>
+                        </div>
+
+                        <!-- Avery - Anglo-Saxon Circular Interlace Knot - Position: Top Right -->
+                        <div class="team-card">
+                            <svg class="team-avatar-radar" viewBox="0 0 100 100">
+                                <!-- Rotating interlace knotwork -->
+                                <g class="symbol-rotate">
+                                    <!-- Outer circle frame -->
+                                    <circle cx="50" cy="50" r="38" fill="none" stroke="var(--maroon)" stroke-width="1.5"/>
+                                    <!-- Interlace pattern - continuous woven line -->
+                                    <path d="M50,15 Q75,15 80,35 Q85,50 75,65 Q65,80 50,85 Q35,80 25,65 Q15,50 20,35 Q25,15 50,15" 
+                                          fill="none" stroke="var(--maroon)" stroke-width="2.5"/>
+                                    <path d="M35,25 Q50,35 65,25" fill="none" stroke="var(--maroon)" stroke-width="2"/>
+                                    <path d="M25,50 Q35,65 25,75" fill="none" stroke="var(--maroon)" stroke-width="2"/>
+                                    <path d="M75,50 Q65,65 75,75" fill="none" stroke="var(--maroon)" stroke-width="2"/>
+                                    <path d="M35,75 Q50,65 65,75" fill="none" stroke="var(--maroon)" stroke-width="2"/>
+                                    <!-- Crossing details -->
+                                    <circle cx="35" cy="35" r="4" fill="rgba(114,47,55,0.2)" stroke="var(--maroon)" stroke-width="1"/>
+                                    <circle cx="65" cy="35" r="4" fill="rgba(114,47,55,0.2)" stroke="var(--maroon)" stroke-width="1"/>
+                                    <circle cx="35" cy="65" r="4" fill="rgba(114,47,55,0.2)" stroke="var(--maroon)" stroke-width="1"/>
+                                    <circle cx="65" cy="65" r="4" fill="rgba(114,47,55,0.2)" stroke="var(--maroon)" stroke-width="1"/>
+                                </g>
+                                <!-- Pulsing core -->
+                                <circle class="symbol-core" cx="50" cy="50" r="12" 
+                                        fill="rgba(212,168,83,0.25)" stroke="var(--gold)" stroke-width="2"/>
+                            </svg>
+                            <h3>Avery</h3>
+                            <span class="role">Operations</span>
+                            <p class="bio">Pursuing an MSc in Innovation Policy at the London School of Economics. Structured the team from the ground up and meticulously mapped every function, user flow, and operational detail. Ensures the entire system integrates seamlessly and operates efficiently, drawing on deep interest in systems design and management.</p>
+                        </div>
+
+                        <!-- Brian - Roman Laurel Wreath - Position: Center Middle -->
+                        <div class="team-card">
+                            <svg class="team-avatar-radar" viewBox="0 0 100 100">
+                                <!-- Rotating laurel wreath -->
+                                <g class="symbol-rotate">
+                                    <!-- Left branch -->
+                                    <ellipse cx="28" cy="30" rx="6" ry="10" fill="rgba(114,47,55,0.15)" stroke="var(--maroon)" stroke-width="1.2" transform="rotate(-30 28 30)"/>
+                                    <ellipse cx="20" cy="42" rx="6" ry="10" fill="rgba(114,47,55,0.15)" stroke="var(--maroon)" stroke-width="1.2" transform="rotate(-50 20 42)"/>
+                                    <ellipse cx="16" cy="56" rx="6" ry="10" fill="rgba(114,47,55,0.15)" stroke="var(--maroon)" stroke-width="1.2" transform="rotate(-70 16 56)"/>
+                                    <ellipse cx="20" cy="70" rx="6" ry="10" fill="rgba(114,47,55,0.15)" stroke="var(--maroon)" stroke-width="1.2" transform="rotate(-100 20 70)"/>
+                                    <!-- Right branch -->
+                                    <ellipse cx="72" cy="30" rx="6" ry="10" fill="rgba(114,47,55,0.15)" stroke="var(--maroon)" stroke-width="1.2" transform="rotate(30 72 30)"/>
+                                    <ellipse cx="80" cy="42" rx="6" ry="10" fill="rgba(114,47,55,0.15)" stroke="var(--maroon)" stroke-width="1.2" transform="rotate(50 80 42)"/>
+                                    <ellipse cx="84" cy="56" rx="6" ry="10" fill="rgba(114,47,55,0.15)" stroke="var(--maroon)" stroke-width="1.2" transform="rotate(70 84 56)"/>
+                                    <ellipse cx="80" cy="70" rx="6" ry="10" fill="rgba(114,47,55,0.15)" stroke="var(--maroon)" stroke-width="1.2" transform="rotate(100 80 70)"/>
+                                </g>
+                                <!-- Pulsing core - ribbon tie -->
+                                <circle class="symbol-core" cx="50" cy="85" r="8" 
+                                        fill="rgba(212,168,83,0.25)" stroke="var(--gold)" stroke-width="2"/>
+                            </svg>
+                            <h3>Brian</h3>
+                            <span class="role">CEO</span>
+                            <p class="bio">PhD in Financial Law and Master's in Economics. Extensive experience in fintech, technology law, and regulatory compliance. Provides seasoned guidance on strategy, risk, and what it takes for ventures to thrive long-term.</p>
+                        </div>
+        
+                        <!-- Abe - Celtic Triskelion (3-arm spiral) - Position: Bottom Left -->
+                        <div class="team-card">
+                            <svg class="team-avatar-radar" viewBox="0 0 100 100">
+                                <!-- Rotating triskelion -->
+                                <g class="symbol-rotate">
+                                    <!-- Three curved arms -->
+                                    <path d="M50,50 Q50,25 70,15 Q88,12 88,32 Q86,48 68,50" 
+                                          fill="none" stroke="var(--maroon)" stroke-width="2.5" stroke-linecap="round"/>
+                                    <path d="M50,50 Q70,62 78,82 Q78,98 58,92 Q42,85 45,68" 
+                                          fill="none" stroke="var(--maroon)" stroke-width="2.5" stroke-linecap="round"/>
+                                    <path d="M50,50 Q30,62 15,55 Q2,42 15,25 Q30,15 42,32" 
+                                          fill="none" stroke="var(--maroon)" stroke-width="2.5" stroke-linecap="round"/>
+                                </g>
+                                <!-- Pulsing core -->
+                                <circle class="symbol-core" cx="50" cy="50" r="12" 
+                                        fill="rgba(212,168,83,0.25)" stroke="var(--gold)" stroke-width="2"/>
+                            </svg>
+                            <h3>Abe</h3>
+                            <span class="role">Lead Engineer</span>
+                            <p class="bio">Engineer at Google, having joined the company at age 18 and advanced rapidly through roles in sales, engineering, backend, and frontend development. Grasped the vision in one conversation and joined immediately. Designs, builds, and implements the core technical systems that bring Harmonia to life with precision and scalability.</p>
+                        </div>
+        
+                        <!-- Felix - Germanic Triple Horn of Odin - Position: Bottom Right -->
+                        <div class="team-card">
+                            <svg class="team-avatar-radar" viewBox="0 0 100 100">
+                                <!-- Rotating triple horns -->
+                                <g class="symbol-rotate">
+                                    <!-- Top horn -->
+                                    <path d="M50,18 Q30,25 28,42 Q30,52 50,50" 
+                                          fill="rgba(114,47,55,0.1)" stroke="var(--maroon)" stroke-width="2" stroke-linecap="round"/>
+                                    <!-- Bottom left horn -->
+                                    <path d="M50,50 Q30,48 22,62 Q22,78 42,82" 
+                                          fill="rgba(114,47,55,0.1)" stroke="var(--maroon)" stroke-width="2" stroke-linecap="round"/>
+                                    <!-- Bottom right horn -->
+                                    <path d="M50,50 Q70,48 78,62 Q78,78 58,82" 
+                                          fill="rgba(114,47,55,0.1)" stroke="var(--maroon)" stroke-width="2" stroke-linecap="round"/>
+                                    <!-- Horn rims -->
+                                    <ellipse cx="50" cy="18" rx="8" ry="4" fill="none" stroke="var(--maroon)" stroke-width="1.5"/>
+                                    <ellipse cx="42" cy="82" rx="7" ry="3" fill="none" stroke="var(--maroon)" stroke-width="1.5"/>
+                                    <ellipse cx="58" cy="82" rx="7" ry="3" fill="none" stroke="var(--maroon)" stroke-width="1.5"/>
+                                </g>
+                                <!-- Pulsing core at intersection -->
+                                <circle class="symbol-core" cx="50" cy="50" r="10" 
+                                        fill="rgba(212,168,83,0.25)" stroke="var(--gold)" stroke-width="2"/>
+                            </svg>
+                            <h3>Felix</h3>
+                            <span class="role">Neuroscience Lead</span>
+                            <p class="bio">Holds a Master's in Computational Cognitive Neuroscience from Goldsmiths, University of London, with an additional year of neuroscience studies at the University of Chicago. Brings deep expertise in brain science to ensure Harmonia's approach remains scientifically robust and credible.</p>
+                        </div>
+                    </div>
+        
+                    <button class="slider-arrow next" aria-label="Next">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    </button>
+                </div>
+        
+                <div class="slider-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+        
+                <!-- Founding Story -->
+                <div class="founding-story">
+                    <div class="story-content">
+                        <p>A question emerged in September 2024. Why had no one integrated genetics into compatibility? Not as a product. As a restoration — returning to signals the body already knows.</p>
+                        
+                        <p>Joles shared it with Avery. The answer felt inevitable. Not a disruption. A necessary correction. Infrastructure for connection that should have existed from the start.</p>
+                        
+                        <p>Brian recognized it immediately. A legal mind who had seen ventures rise and fall knew this was different. He offered one directive: "Build the right team first."</p>
+                        
+                        <p>Then Abe. One conversation. A Google engineer who had been waiting for exactly this problem. Not another dating app. The foundation for something the industry had refused to build. He was in before the call ended.</p>
+                        
+                        <p>At the HowTheLightGetsIn festival came Felix — a neuroscientist exploring the intersection of mind and matter. The first demo played. Felix didn't just see code; he saw proof.</p>
+                        
+                        <p>Five people. Four months. One question that had always been there, waiting to be asked.</p>
+                    </div>
+                </div>
+            </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-inner">
+                <span class="logo-text">Harmonia Engine</span>
+                <div class="footer-links">
+                    <a onclick="showPage('why-harmonia')">Why Harmonia</a>
+                    <a onclick="showPage('partnerships')">Ignite Your Platform</a>
+                    <a onclick="showPage('team')">Team</a>
+                    <a onclick="showPage('contact')">Contact</a>
+                </div>
+                <p class="copyright">© 2026 Harmonia Engine</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- LOCAL NETWORK PAGE -->
+    <div class="page" id="page-local-network">
+        <section class="engine-container">
+            <div class="engine-header">
+                <h2 class="engine-title">Local Matching Engine</h2>
+                <div class="engine-status">
+                    <span class="status-dot"></span>
+                    <span>Beta Active</span>
+                </div>
+            </div>
+
+            <div class="engine-content">
+                <div class="profile-panel">
+                    <h4>Profile A</h4>
+                    <div class="profile-radar">
+                        <svg viewBox="0 0 100 100" width="120" height="120">
+                            <polygon points="50,15 80,35 80,65 50,85 20,65 20,35" fill="none" stroke="rgba(114,47,55,0.3)" stroke-width="1"/>
+                            <polygon points="50,25 70,40 70,60 50,75 30,60 30,40" fill="rgba(114,47,55,0.1)" stroke="var(--maroon)" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <div class="profile-traits">
+                        <span class="trait-tag">Openness: High</span>
+                        <span class="trait-tag">HLA: A*02:01</span>
+                        <span class="trait-tag">Visual: 7.2</span>
+                    </div>
+                </div>
+
+                <div class="compatibility-panel">
+                    <p class="compatibility-label">Harmonia Score</p>
+                    <div class="compatibility-score">87%</div>
+                    <div class="connection-themes">
+                        <span class="theme-badge">HLA Diversity</span>
+                        <span class="theme-badge">Personality Resonance</span>
+                        <span class="theme-badge">Visual Alignment</span>
+                    </div>
+                </div>
+
+                <div class="profile-panel">
+                    <h4>Profile B</h4>
+                    <div class="profile-radar">
+                        <svg viewBox="0 0 100 100" width="120" height="120">
+                            <polygon points="50,15 80,35 80,65 50,85 20,65 20,35" fill="none" stroke="rgba(212,168,83,0.3)" stroke-width="1"/>
+                            <polygon points="50,25 70,40 70,60 50,75 30,60 30,40" fill="rgba(212,168,83,0.1)" stroke="var(--gold)" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <div class="profile-traits">
+                        <span class="trait-tag">Openness: High</span>
+                        <span class="trait-tag">HLA: B*07:02</span>
+                        <span class="trait-tag">Visual: 6.8</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-inner">
+                <span class="logo-text">Harmonia Engine</span>
+                <div class="footer-links">
+                    <a onclick="showPage('why-harmonia')">Why Harmonia</a>
+                    <a onclick="showPage('partnerships')">Ignite Your Platform</a>
+                    <a onclick="showPage('team')">Team</a>
+                    <a onclick="showPage('contact')">Contact</a>
+                </div>
+                <p class="copyright">© 2026 Harmonia Engine</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- P2P NETWORK PAGE -->
+    <div class="page" id="page-p2p">
+        <section class="p2p-section">
+            <div class="coming-soon-container">
+                <span class="coming-soon-badge">Testing Pool Open</span>
+                <h2 class="p2p-title">Join the London Beta</h2>
+                <p class="rebellion-tagline">"Chemistry, not selection."</p>
+                
+                <p class="p2p-subtitle">
+                    Be among the first to experience compatibility matching that goes beyond swiping. We're recruiting London-based participants for our January 2026 beta launch.
+                </p>
+
+                <div class="waitlist-form">
+                    <form id="waitlistForm">
+                        <input type="email" name="email" placeholder="Enter your email" required>
+                        <button type="submit" class="btn btn-primary">Join Waitlist</button>
+                    </form>
+                    <div id="waitlistMessage" class="form-message"></div>
+                </div>
+
+                <div class="free-dna-banner">
+                    <h3>Free DNA Kit for Beta Testers</h3>
+                    <p>First 100 participants receive a complimentary genetic analysis kit, a £35 value.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-inner">
+                <span class="logo-text">Harmonia Engine</span>
+                <div class="footer-links">
+                    <a onclick="showPage('why-harmonia')">Why Harmonia</a>
+                    <a onclick="showPage('partnerships')">Ignite Your Platform</a>
+                    <a onclick="showPage('team')">Team</a>
+                    <a onclick="showPage('contact')">Contact</a>
+                </div>
+                <p class="copyright">© 2026 Harmonia Engine</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- CONTACT PAGE -->
+    <div class="page" id="page-contact">
+        <section class="contact-section">
+                <div class="contact-header">
+                    <h2>Get in Touch</h2>
+                    <p>Whether you're a potential partner, investor, or curious about what we're building — we'd love to hear from you.</p>
+                </div>
+        
+                <div class="contact-layout">
+                    <!-- Left Column: Contact Options -->
+                    <div class="contact-options">
+                        <div class="contact-card" data-type="platform" onclick="selectContactType(this, 'platform')">
+                            <h3>For Platforms</h3>
+                            <p>Interested in integrating the Harmonia Engine into your platform? Let's discuss how compatibility science can improve your matching.</p>
+                            <span class="card-indicator">Selected →</span>
+                        </div>
+        
+                        <div class="contact-card" data-type="individual" onclick="selectContactType(this, 'individual')">
+                            <h3>For Testing</h3>
+                            <p>Want to be part of our London beta? Join the testing pool and help us refine compatibility matching.</p>
+                            <span class="card-indicator">Selected →</span>
+                        </div>
+        
+                        <div class="contact-card" data-type="other" onclick="selectContactType(this, 'other')">
+                            <h3>General Inquiries</h3>
+                            <p>Press, research collaborations, or just want to say hello? We're always happy to connect.</p>
+                            <span class="card-indicator">Selected →</span>
+                        </div>
+                    </div>
+        
+                    <!-- Right Column: Regal Form -->
+                    <div class="regal-form-container">
+                        <form class="regal-form" id="contactForm">
+                            <h3>Send a Message</h3>
+                            
+                            <div class="form-row">
+                                <div class="input-group">
+                                    <label for="contact-name">Your Name</label>
+                                    <input type="text" id="contact-name" name="name" required placeholder="Jane Smith">
+                                </div>
+                                <div class="input-group">
+                                    <label for="contact-email">Email</label>
+                                    <input type="email" id="contact-email" name="email" required placeholder="jane@example.com">
+                                </div>
+                            </div>
+        
+                            <div class="input-group">
+                                <label for="contact-type">I am a...</label>
+                                <select id="contact-type" name="type" required>
+                                    <option value="">Select...</option>
+                                    <option value="platform">Dating Platform</option>
+                                    <option value="investor">Investor</option>
+                                    <option value="researcher">Researcher</option>
+                                    <option value="press">Press</option>
+                                    <option value="individual">Individual User</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+        
+                            <div class="input-group">
+                                <label for="contact-message">Message</label>
+                                <textarea id="contact-message" name="message" required placeholder="Tell us what you're thinking..."></textarea>
+                            </div>
+        
+                            <button type="submit" class="submit-btn" id="submitBtn">
+                                <span class="btn-text">Send Message</span>
+                                <span class="arrow">→</span>
+                            </button>
+        
+                            <div class="form-success" id="formSuccess">
+                                Message received. We will be in touch shortly.
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-inner">
+                <span class="logo-text">Harmonia Engine</span>
+                <div class="footer-links">
+                    <a onclick="showPage('why-harmonia')">Why Harmonia</a>
+                    <a onclick="showPage('partnerships')">Ignite Your Platform</a>
+                    <a onclick="showPage('team')">Team</a>
+                    <a onclick="showPage('contact')">Contact</a>
+                </div>
+                <p class="copyright">© 2026 Harmonia Engine</p>
+            </div>
+        </footer>
+    </div>
