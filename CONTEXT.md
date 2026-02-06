@@ -5,17 +5,19 @@
 
 ## 📋 Table of Contents
 1. [Project Overview](#project-overview)
-2. [File Structure](#file-structure)
-3. [CSS Architecture](#css-architecture)
-4. [JavaScript Modules](#javascript-modules)
-5. [HTML Structure](#html-structure)
-6. [Design System](#design-system)
-7. [Animation System](#animation-system)
-8. [Page System](#page-system)
-9. [Responsive Design](#responsive-design)
-10. [Dark Mode Implementation](#dark-mode-implementation)
-11. [Dependencies](#dependencies)
-12. [Browser Compatibility](#browser-compatibility)
+2. [Deployment (Render.com)](#deployment-rendercom)
+3. [File Structure](#file-structure)
+4. [WebGL System](#webgl-system)
+5. [CSS Architecture](#css-architecture)
+6. [JavaScript Modules](#javascript-modules)
+7. [HTML Structure](#html-structure)
+8. [Design System](#design-system)
+9. [Animation System](#animation-system)
+10. [Page System](#page-system)
+11. [Responsive Design](#responsive-design)
+12. [Dark Mode Implementation](#dark-mode-implementation)
+13. [Dependencies](#dependencies)
+14. [Browser Compatibility](#browser-compatibility)
 
 ---
 
@@ -33,8 +35,64 @@ The tagline encapsulates the product's mission: *"They designed addiction. We de
 - **Frontend**: Vanilla HTML5, CSS3, JavaScript (ES6+)
 - **Styling**: Pure CSS with CSS Custom Properties (CSS Variables)
 - **Animations**: CSS Keyframe animations + JavaScript-driven SVG animations
-- **No WebGL**: Despite the complexity, this project uses CSS animations exclusively (no WebGL/Canvas)
+- **WebGL**: Custom particle system + neural network shader background
+- **Server**: Node.js with Express (for Render.com deployment)
 - **Fonts**: Google Fonts (Cormorant Garamond, DM Sans)
+
+---
+
+## 🚀 Deployment (Render.com)
+
+### Quick Deploy
+
+1. **Push to GitHub** (or GitLab/Bitbucket)
+2. **Connect to Render.com**:
+   - Create a new "Web Service"
+   - Connect your repository
+   - Render auto-detects the `render.yaml` configuration
+
+### Manual Configuration
+
+If not using `render.yaml`:
+- **Environment**: Node
+- **Build Command**: `npm install`
+- **Start Command**: `npm start`
+- **Health Check Path**: `/`
+
+### Files for Deployment
+
+| File | Purpose |
+|------|---------|
+| `package.json` | Node.js dependencies & scripts |
+| `server.js` | Express server configuration |
+| `render.yaml` | Render.com deployment config |
+| `public/` | Static files served by Express |
+
+### Environment Variables
+
+| Variable | Default | Description |
+|----------|---------|-------------|
+| `PORT` | 3000 | Server port (Render sets this automatically) |
+| `NODE_ENV` | production | Environment mode |
+
+### Local Development
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm start
+
+# Server runs at http://localhost:3000
+```
+
+### Server Features
+
+- **Compression**: Gzip enabled for all responses
+- **Security Headers**: X-Content-Type-Options, X-Frame-Options, X-XSS-Protection
+- **Static Caching**: 1-day cache for static assets
+- **SPA Support**: All routes serve `index.html`
 
 ---
 
@@ -42,29 +100,136 @@ The tagline encapsulates the product's mission: *"They designed addiction. We de
 
 ```
 harmonia-separated/
-├── index.html              # Main HTML entry point
-├── CONTEXT.md              # This documentation file
-├── body_content.html       # Extracted HTML body (for reference)
-├── css/
-│   └── main.css           # Complete stylesheet (~6,150 lines)
-├── js/
-│   ├── logo.js            # Logo SVG data and initialization
-│   ├── navigation.js      # Page navigation, routing, mobile menu
-│   ├── sliders.js         # Science cards & team sliders
-│   ├── partnerships.js    # Dynamic tier system for partnerships
-│   └── animations.js      # All card animations (Visual, Personality, Genetic, Synthesis)
-└── original.html          # Original monolithic file (for reference)
+├── package.json            # Node.js configuration
+├── server.js               # Express server
+├── render.yaml             # Render.com deployment config
+├── CONTEXT.md              # This documentation
+├── public/                 # Static files (served by Express)
+│   ├── index.html          # Main HTML entry point
+│   ├── css/
+│   │   └── main.css        # Complete stylesheet (~6,200 lines)
+│   └── js/
+│       ├── logo.js         # Logo SVG data and initialization
+│       ├── navigation.js   # Page navigation, routing, mobile menu
+│       ├── sliders.js      # Science cards & team sliders
+│       ├── partnerships.js # Dynamic tier system
+│       ├── animations.js   # SVG card animations
+│       └── webgl.js        # WebGL particle system & shaders
+└── (development files)
+    ├── body_content.html   # Extracted HTML body (reference)
+    └── original.html       # Original monolithic file (reference)
 ```
 
-### File Sizes
-| File | Lines | Purpose |
-|------|-------|---------|
-| `main.css` | ~6,150 | All styles, variables, responsive breakpoints |
-| `logo.js` | ~30 | Base64 logo data, initialization |
-| `navigation.js` | ~100 | SPA routing, history API, mobile nav |
-| `sliders.js` | ~320 | Touch-enabled sliders |
-| `partnerships.js` | ~337 | Tier system, modals, SVG icons |
-| `animations.js` | ~660 | Complex SVG path animations |
+---
+
+## 🎮 WebGL System
+
+The application features a custom WebGL implementation providing real-time visual effects.
+
+### Components
+
+#### 1. Neural Network Background (`NeuralBackground` class)
+- **Location**: Hero section background
+- **Canvas ID**: `#webgl-hero`
+- **Effects**: 
+  - Animated neural network nodes
+  - Connection lines with pulse animation
+  - Simplex noise texture overlay
+  - Theme-aware color adaptation
+
+#### 2. Particle System (`ParticleSystem` class)
+- **Location**: Global overlay
+- **Canvas ID**: `#webgl-particles`
+- **Effects**:
+  - 80 floating particles
+  - Gold/maroon color scheme (theme-aware)
+  - Soft circular particles with glow
+  - Wave motion animation
+
+### Shader Architecture
+
+```
+public/js/webgl.js
+├── WebGLUtils              # Utility functions
+├── PARTICLE_VERTEX_SHADER  # Particle positioning
+├── PARTICLE_FRAGMENT_SHADER # Circular particle rendering
+├── NEURAL_VERTEX_SHADER    # Fullscreen quad
+├── NEURAL_FRAGMENT_SHADER  # Neural network visualization
+├── DNA_VERTEX_SHADER       # (Reserved for genetic section)
+├── DNA_FRAGMENT_SHADER     # (Reserved for genetic section)
+├── ParticleSystem          # Particle management class
+├── NeuralBackground        # Neural shader class
+└── HarmoniaWebGL           # Global manager
+```
+
+### Neural Network Shader Details
+
+The neural network shader creates a procedurally animated background:
+
+```glsl
+// Key features:
+// 1. 5x4 grid of animated nodes
+// 2. Connecting lines with pulse effect
+// 3. Simplex noise for organic texture
+// 4. Vignette effect for depth
+// 5. Dark/light mode color adaptation
+```
+
+### Particle System Details
+
+```javascript
+// Configuration options:
+{
+    particleCount: 80,        // Number of particles
+    colorPrimary: [0.83, 0.66, 0.33],   // Gold RGB
+    colorSecondary: [0.45, 0.18, 0.22], // Maroon RGB
+    maxSize: 3,               // Max particle size in pixels
+    minSize: 1,               // Min particle size
+    speed: 0.3                // Movement speed
+}
+```
+
+### Theme Integration
+
+WebGL colors automatically update when theme changes:
+
+```javascript
+// Light mode
+colorPrimary: [0.83, 0.66, 0.33]   // #D4A853 (Gold)
+colorSecondary: [0.45, 0.18, 0.22] // #722F37 (Maroon)
+
+// Dark mode
+colorPrimary: [0.94, 0.78, 0.43]   // #F0C86E (Bright Gold)
+colorSecondary: [0.55, 0.23, 0.27] // #8B3A45 (Light Maroon)
+```
+
+### Performance Optimizations
+
+1. **Visibility API**: Animation pauses when tab is hidden
+2. **Reduced Motion**: WebGL disabled if `prefers-reduced-motion` is set
+3. **Graceful Fallback**: CSS-only mode if WebGL unavailable
+4. **Efficient Rendering**: Single draw call for all particles
+
+### CSS for WebGL
+
+```css
+#webgl-hero {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+#webgl-particles {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.6;
+}
+```
 
 ---
 
@@ -489,17 +654,27 @@ function toggleTheme() {
 
 ## 📦 Dependencies
 
+### NPM Dependencies (package.json)
+```json
+{
+  "dependencies": {
+    "express": "^4.18.2",
+    "compression": "^1.7.4"
+  }
+}
+```
+
 ### External Resources
 - **Google Fonts**: Cormorant Garamond (400-700), DM Sans (400-700)
   ```html
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   ```
 
-### No Build Tools Required
-- No npm/yarn packages
-- No bundler (Webpack, Vite, etc.)
-- No transpilation needed
-- No CSS preprocessor
+### No Frontend Build Tools Required
+- No Webpack, Vite, or other bundlers
+- No CSS preprocessors (Sass/Less)
+- No transpilation (Babel)
+- Vanilla ES6+ JavaScript
 
 ---
 
